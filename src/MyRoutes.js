@@ -6,6 +6,8 @@ import MyAllFood from './MyAllFood'
 import MyAllCustomer from './MyAllCustomer'
 import MyAllOrder from './MyAllOrder'
 import MyNavBar from './MyNavBar'
+import OrderDetails from './OrderDetails'
+import MyAllMessage from './MyAllMessage'
 
 
 function MyRoutes() {
@@ -19,6 +21,8 @@ function MyRoutes() {
                 <Route path='/allfoods' element={<MyAllFood/>} />
                 <Route path='/allorders' element={<MyAllOrder/>} />
                 <Route path='/allcustomers' element={<MyAllCustomer/>} />
+                <Route path='/allmessages' element={<MyAllMessage/>} />
+                <Route path='/orderdetails/:orderid' element={<OrderDetails />} />
             </Routes>
         </Router>
     </div>

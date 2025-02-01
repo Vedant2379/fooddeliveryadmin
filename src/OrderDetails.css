@@ -1,0 +1,23 @@
+.order-details-container {
+    padding: 20px;
+  }
+  
+  .details-heading {
+    text-align: center;
+  }
+  
+  .customer-info {
+    margin-bottom: 20px;
+  }
+  
+  .status-form {
+    margin-top: 20px;
+  }
+  
+  .status-form label {
+    margin-right: 15px;
+  }
+  
+  .status-form button {
+    margin-top: 15px;
+  }

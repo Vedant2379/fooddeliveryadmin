@@ -1,0 +1,36 @@
+.dashboard-container {
+  background-image: url("./images/loginback3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 88vh;
+  width: 100vw;
+    padding: 50px 0;
+  }
+  
+  .dashboard-heading {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 132px;
+    font-weight: bold;
+    color: rgba(95, 10, 124, 0.992);
+  }
+
+  .dashboard-heading1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .dashboard-card {
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-card h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .dashboard-card p {
+    margin-bottom: 10px;
+  }

@@ -1,0 +1,59 @@
+.add-food-container {
+  display: flex;
+  background-image: url("./images/loginback3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 88vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  }
+  
+  .add-food-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  }
+  
+  .add-food-heading + .row {
+    justify-content: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .btn {
+      background-color: #292a88;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 80px;
+      cursor: pointer;
+      margin-left: 100;
+  }
+  
+  .row:last-child {
+    margin-top: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .add-food-heading {
+      font-size: 42px;
+    }
+  
+    .form-group {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
