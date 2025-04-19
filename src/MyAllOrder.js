@@ -57,7 +57,9 @@ function MyAllOrder() {
     const navi = useNavigate()
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/allorder')
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+        // axios.get('http://localhost:5000/api/allorder')
+        axios.get(`${API_BASE_URL}/api/allorder`)
             .then((result) => {
                 setorderData(result.data)
             }).catch((err) => {

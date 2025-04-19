@@ -8,7 +8,9 @@ function MyAllMessage() {
     const [messageData, setmessageData] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/allmessage')
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+        // axios.get('http://localhost:5000/api/allmessage')
+        axios.get(`${API_BASE_URL}/api/allmessage`)
             .then((result) => {
                 setmessageData(result.data)
             }).catch((err) => {

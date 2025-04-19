@@ -94,12 +94,15 @@ const OrderDetails = () => {
     const { orderid } = useParams()
     const [orderDetails, setorderDetails] = useState({})
     const [selStatus, setselStatus] = useState("")
+    
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
     useEffect(() => {
         const data = {
             oid: orderid
         }
-        axios.post('http://localhost:5000/api/getorderbyid', data)
+        // axios.post('http://localhost:5000/api/getorderbyid', data)
+        axios.post(`${API_BASE_URL}/api/getorderbyid`, data)
             .then((result) => {
                 setorderDetails({ ...result.data })
                 console.log("DATA", result.data)
@@ -113,7 +116,8 @@ const OrderDetails = () => {
             orderstatus: selStatus,
             oid: orderid
         }
-        axios.post('http://localhost:5000/api/updatestatus', orderData)
+        // axios.post('http://localhost:5000/api/updatestatus', orderData)
+        axios.post(`${API_BASE_URL}/api/updatestatus`, orderData)
             .then((result) => {
                 window.location.reload(false)
             }).catch((err) => {
@@ -137,7 +141,7 @@ const OrderDetails = () => {
                         {orderDetails?.OrderItems?.map((food, index) => (
                             <Col key={index}>
                                 <Card>
-                                    <Card.Img className='food-image' src={`http://localhost:5000${food.FoodId.FoodImage}`} />
+                                    <Card.Img className='food-image' src={`${API_BASE_URL}${food.FoodId.FoodImage}`} />
                                     <Card.Body>
                                         <h5>{food.FoodId.FoodName}</h5>
                                         <p>Price : {food.FoodId.FoodPrice}</p>

@@ -105,7 +105,10 @@ function MyAddFood() {
             FoodPrice: Number(foodPrice),
             FoodImage: foodImage
         }
-        axios.post("http://localhost:5000/api/addfood", food)
+
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+        // axios.post("http://localhost:5000/api/addfood", food)
+        axios.post(`${API_BASE_URL}/api/addfood`, food)
             .then((result) => {
                 alert("Food Added")
                 console.log(result.data)
@@ -121,7 +124,10 @@ function MyAddFood() {
             'image',
             e.target.files[0]
         );
-        axios.post("http://localhost:5000/uploadfile", imgData)
+
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+        // axios.post("http://localhost:5000/uploadfile", imgData)
+        axios.post(`${API_BASE_URL}/uploadfile`, imgData)
             .then((res) => {
                 console.log("Res:", res.data);
                 setImage(res.data.filepath)

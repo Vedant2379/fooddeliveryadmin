@@ -51,7 +51,9 @@ function MyAllCustomer() {
     const [customerData, setcustomerData] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/allcustomer')
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+        // axios.get('http://localhost:5000/api/allcustomer')
+        axios.get(`${API_BASE_URL}/api/allcustomer`)
             .then((result) => {
                 setcustomerData(result.data)
             }).catch((err) => {

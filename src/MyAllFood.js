@@ -49,9 +49,12 @@ import './MyAllFood.css';
 
 function MyAllFood() {
   const [foodData, setfoodData] = useState([])
+  
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/allfood')
+    // axios.get('http://localhost:5000/api/allfood')
+    axios.get(`${API_BASE_URL}/api/allfood`)
       .then((result) => {
         setfoodData(result.data)
       }).catch((err) => {
@@ -68,7 +71,7 @@ function MyAllFood() {
               return (
                 <Col key={index} lg={3} md={6} sm={12}>
                   <Card className="food-card">
-                    <Card.Img className='food-image' src={`http://localhost:5000${food.FoodImage}`} />
+                    <Card.Img className='food-image' src={`${API_BASE_URL}${food.FoodImage}`} />
                     <Card.Body>
                       <h5 className="food-name">{food.FoodName}</h5>
                       <p className="food-details">Type: {food.FoodType}</p>
